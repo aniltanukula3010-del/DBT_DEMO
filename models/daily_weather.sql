@@ -1,3 +1,11 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
+
 with daily_weather as (
 
 select 
