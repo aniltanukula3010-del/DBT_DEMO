@@ -3,7 +3,6 @@
         materialized='table'
     )
 }}
-
 WITH BIKE as (
 
 
@@ -12,7 +11,7 @@ WITH BIKE as (
     start_station_name as station_name,
     start_lat as station_lat,
     start_lng as start_station_lng
-    from {{ source('demo', 'bike') }}
-    where RIDE_ID <>'ride_id'
+    from {{ ref('stg_bike') }}
+    
 )
 select * from BIKE
